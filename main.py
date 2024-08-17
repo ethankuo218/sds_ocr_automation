@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import cv2
 
+path = 'images'
 match_map = {
     'physical_state': ['Physical state'],
     'color': ['Color'],
@@ -19,7 +20,7 @@ data = []
 
 
 def get_sorted_images():
-    all_files = os.listdir('sds')  # Replace 'images' with the actual directory name
+    all_files = os.listdir(path)  # Replace 'images' with the actual directory name
     images = [file for file in all_files if file.endswith('.png')]
 
     def extract_number(filename):
@@ -51,7 +52,7 @@ async def recognize_file(file_name, image_path_list: list):
 
         for image_path in image_path_list:
             # read image
-            image = cv2.imread(f"sds/{image_path}")
+            image = cv2.imread(f"{path}/{image_path}")
             extracted_text += image_to_string(image)
 
         extracted_text_array = extracted_text.split('\n')
