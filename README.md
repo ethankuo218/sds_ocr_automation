@@ -31,5 +31,6 @@ The SDS OCR Automation tool processes image files of Safety Data Sheets and extr
 ## Usage
 
 1. Place SDS image files in the `sds` directory
-2. Run `python main.py`
-3. Check `output.xlsx` for results
+2. Run `pre-generate-images.py`, it will generate images first and place in `images` directory
+3. Run `python main.py`
+4. Check `output.xlsx` for results
